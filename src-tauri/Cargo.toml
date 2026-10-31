@@ -1,0 +1,24 @@
+[package]
+name = "cubix"
+version = "1.0.0"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+serde_json = "1"
+reqwest = { version = "0.12", default-features = false, features = ["blocking", "json", "native-tls"] }
+zip = { version = "2", default-features = false, features = ["deflate"] }
+sha1 = "0.10"
+md-5 = "0.10"
+rayon = "1"
+urlencoding = "2"
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+strip = true

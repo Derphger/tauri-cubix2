@@ -1,0 +1,20 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Cubix",
+  "version": "1.0.0",
+  "identifier": "com.cubix.launcher",
+  "build": { "frontendDist": "../dist" },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      { "label": "main", "title": "Cubix", "width": 1240, "height": 780, "minWidth": 1020, "minHeight": 660 }
+    ],
+    "security": { "csp": null }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "icon": ["icons/icon.ico", "icons/icon.png"],
+    "windows": { "nsis": { "installMode": "currentUser" } }
+  }
+}
